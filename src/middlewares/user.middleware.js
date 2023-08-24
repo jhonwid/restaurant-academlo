@@ -9,7 +9,7 @@ exports.existUser = catchAsync(async (req, res, next) => {
 
     const user = await User.findOne({
         where: {
-            status: true,
+            statusUser: true,
             id,
         },
     });

@@ -7,7 +7,7 @@ exports.existOrder = catchAsync(async (req, res, next) => {
 
     const order = await Order.findOne({
         where: {
-            status: 'active',
+            status_order: 'active',
             id,
         },
     });

@@ -7,7 +7,7 @@ exports.existReview = catchAsync(async (req, res, next) => {
 
     const review = await Restaurant.findOne({
         where: {
-            status: true,
+            statusReview: true,
             id,
         },
         include: [

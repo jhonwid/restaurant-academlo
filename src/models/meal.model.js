@@ -8,22 +8,25 @@ const Meal = db.define('Meals', {
         autoIncrement: true,
         allowNull: false,
     },
-    name: {
+    name_meal: {
         type: DataTypes.STRING,
         allowNull: false,
+        field: 'name',
     },
-    price: {
+    price_meal: {
         type: DataTypes.FLOAT,
         allowNull: false,
+        field: 'price',
     },
     restaurantId: {
         type: DataTypes.INTEGER,
         allowNull: false,
     },
-    status: {
+    status_meal: {
         type: DataTypes.BOOLEAN,
         allowNull: false,
         defaultValue: true,
+        field: 'status',
     },
 });
 

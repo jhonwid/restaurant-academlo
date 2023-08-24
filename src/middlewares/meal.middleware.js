@@ -7,7 +7,7 @@ exports.existMeal = catchAsync(async (req, res, next) => {
 
     const meal = await Meal.findOne({
         where: {
-            status: true,
+            status_meal: true,
             id,
         },
     });

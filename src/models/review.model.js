@@ -12,7 +12,7 @@ const Review = db.define('reviews', {
         type: DataTypes.INTEGER,
         allowNull: false,
     },
-    comment: {
+    commentReview: {
         type: DataTypes.TEXT,
         allowNull: false,
     },
@@ -20,11 +20,11 @@ const Review = db.define('reviews', {
         type: DataTypes.INTEGER,
         allowNull: false,
     },
-    rating: {
+    ratingReview: {
         type: DataTypes.INTEGER,
         allowNull: false,
     },
-    status: {
+    statusReview: {
         type: DataTypes.BOOLEAN,
         allowNull: false,
         defaultValue: true,

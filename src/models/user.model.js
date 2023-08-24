@@ -11,30 +11,30 @@ const User = db.define('users', {
     nameUser: {
         type: DataTypes.STRING,
         allowNull: false,
-        field: 'name_user',
+        field: 'name',
     },
     emailUser: {
         type: DataTypes.STRING,
         allowNull: false,
         unique: true,
-        field: 'email_user',
+        field: 'email',
     },
     passwordUser: {
         type: DataTypes.STRING,
         allowNull: false,
-        field: 'password_user',
+        field: 'password',
     },
     roleUser: {
         type: DataTypes.ENUM('normal', 'admin'),
         allowNull: false,
         defaultValue: 'normal',
-        field: 'role_user',
+        field: 'role',
     },
     statusUser: {
         type: DataTypes.BOOLEAN,
         allowNull: false,
         defaultValue: true,
-        field: 'status_user',
+        field: 'status',
     },
 });
 

@@ -20,9 +20,9 @@ exports.findAllRestaurant = catchAsync(async (req, res, next) => {
 //* Restaurante crear
 exports.createRestaurant = catchAsync(async (req, res, next) => {
 
-    const { name, address, rating } = req.body;
+    const { nameRestaurant, addressRestaurant, ratingRestaurant } = req.body;
 
-    await Restaurant.create({ name, address, rating });
+    await Restaurant.create({ nameRestaurant, addressRestaurant, ratingRestaurant });
 
     return res.status(201).json({
         status: 'success',
@@ -44,9 +44,9 @@ exports.findOneRestaurant = catchAsync(async (req, res, next) => {
 //* Restaurante actualizar
 exports.updateRestaurant = catchAsync(async (req, res, next) => {
     const { restaurant } = req;
-    const { name, address } = req.body;
+    const { nameRestaurant, addressRestaurant } = req.body;
 
-    await restaurant.update({ name, address });
+    await restaurant.update({ nameRestaurant, addressRestaurant });
 
     return res.status(201).json({
         status: 'success',
@@ -58,7 +58,7 @@ exports.updateRestaurant = catchAsync(async (req, res, next) => {
 exports.deleteRestaurant = catchAsync(async (req, res, next) => {
     const { restaurant } = req;
 
-    await restaurant.update({ status: false });
+    await restaurant.update({ statusRestaurant: false });
 
     return res.status(200).json({
         status: 'success',

@@ -6,7 +6,7 @@ const orderController = require('./../controllers/order.controller');
 //* Middlewares
 const authenticationMiddleware = require('./../middlewares/authentication.middleware');
 const orderMiddleware = require('./../middlewares/order.middleware');
-//const validationMiddleware = require('../middlewares/validation.middleware');
+const validationMiddleware = require('../middlewares/validation.middleware');
 
 const router = express.Router();
 
@@ -14,7 +14,10 @@ const router = express.Router();
 router
     .use(authenticationMiddleware.protect)
     .route('/')
-    .post(orderController.createOrder)
+    .post(
+        validationMiddleware.createOrderValidation,
+        orderController.createOrder
+    )
     .get(orderController.findAllOrders);
 
 
@@ -22,9 +25,13 @@ router
     .route('/:id')
     .patch(
         orderMiddleware.existOrder,
-        orderController.updateOrde)
+        validationMiddleware.updateOrderValidation,
+        orderController.updateOrde
+    )
     .delete(
         orderMiddleware.existOrder,
-        orderController.deleteOrder);
+        validationMiddleware.deleteOrderValidation,
+        orderController.deleteOrder
+    );
 
 module.exports = router;

@@ -3,10 +3,10 @@ const Order = require('./../models/order.model');
 
 //* Order Crear
 exports.createOrder = catchAsync(async (req, res, next) => {
-    const { quantity } = req.body;
+    const { quantity_order } = req.body;
     const { id } = req.body;
 
-    await Order.create({ quantity, mealId: Number(id) });
+    await Order.create({ quantity_order, mealId: Number(id) });
 
     return res.status(201).json({
         status: 'success',
@@ -19,7 +19,7 @@ exports.findAllOrders = catchAsync(async (req, res, next) => {
 
     const order = await Order.findAll({
         where: {
-            status: 'active',
+            status_order: 'active',
         }
     });
     return res.status(200).json({
@@ -36,7 +36,7 @@ exports.updateOrde = catchAsync(async (req, res, next) => {
 
     const { order } = req;
 
-    await order.update({ status: 'completed' });
+    await order.update({ status_order: 'completed' });
 
     return res.status(201).json({
         status: 'success',
@@ -49,7 +49,7 @@ exports.deleteOrder = catchAsync(async (req, res, next) => {
 
     const { order } = req;
 
-    await order.delete({ status: 'cancelled' });
+    await order.delete({ status_order: 'cancelled' });
 
     return res.status(200).json({
         status: 'success',

@@ -8,22 +8,26 @@ const Restaurant = db.define('restaurants', {
         autoIncrement: true,
         allowNull: false,
     },
-    name: {
+    nameRestaurant: {
         type: DataTypes.STRING,
         allowNull: false,
+        field: 'name',
     },
-    address: {
+    addressRestaurant: {
         type: DataTypes.STRING,
         allowNull: false,
+        field: 'address',
     },
-    rating: {
+    ratingRestaurant: {
         type: DataTypes.INTEGER,
         allowNull: false,
+        field: 'rating',
     },
-    status: {
+    statusRestaurant: {
         type: DataTypes.BOOLEAN,
         allowNull: false,
         defaultValue: true,
+        field: 'status',
     },
 });
 

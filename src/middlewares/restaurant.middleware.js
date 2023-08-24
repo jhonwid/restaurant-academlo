@@ -7,7 +7,7 @@ exports.existRestaurant = catchAsync(async (req, res, next) => {
 
     const restaurant = await Restaurant.findOne({
         where: {
-            status: true,
+            statusRestaurant: true,
             id: restaurantId || id,
         },
     });

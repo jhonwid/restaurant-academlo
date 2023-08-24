@@ -16,18 +16,21 @@ const Order = db.define('orders', {
         type: DataTypes.INTEGER,
         allowNull: false,
     },
-    totalPrice: {
+    totalPrice_order: {
         type: DataTypes.FLOAT,
         allowNull: false,
+        field: 'total_price',
     },
-    quantity: {
+    quantity_order: {
         type: DataTypes.INTEGER,
         allowNull: false,
+        field: 'quantity',
     },
-    status: {
+    status_order: {
         type: DataTypes.ENUM('active', 'cancelled', 'completed'),
         allowNull: false,
         defaultValue: 'active',
+        field: 'status',
     },
 });
 
